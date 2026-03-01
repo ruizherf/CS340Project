@@ -142,7 +142,7 @@ app.get('/menu-items', async function (req, res) {
     try {
         // Create and execute our queries
         // In query1, we use a JOIN clause to display the names of the homeworlds
-        const query1 = `SELECT * FROM MenuItems;`;
+        const query1 = `SELECT MenuItemID AS 'Menu Item ID', Name AS 'Name', Price AS 'Price' FROM MenuItems;`;
         const [menuitems] = await db.query(query1);
 
         // Render the bsg-people.hbs file, and also send the renderer
